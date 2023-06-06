@@ -22,9 +22,9 @@ class Queue(AbstractQueue):
 
     def search(self, index):
         """Aqui irá sua implementação"""
-        if index in self._queue:
-            return self._queue
-        raise IndexError("Índice Inválido ou Inexistente")
+        if 0 > index or index >= len(self._queue):
+            raise IndexError("Índice Inválido ou Inexistente")
+        return self._queue[index]
 
     def is_empty(self):
         return len(self._queue) == 0
